@@ -5,7 +5,7 @@ class Navigation extends React.Component {
   render() {
     return (
       <header className="App-header">
-        <Navbar bg="dark" expand="lg">
+        <Navbar fixed="top" bg="light" expand="lg">
           <Navbar.Brand href="#home">Primate Land</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

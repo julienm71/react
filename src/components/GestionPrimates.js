@@ -133,32 +133,31 @@ const GestionPrimates = () => {
 
     return (
       <div>
-      <Navigation />
-      <div className="container text-center my-3">
-        <h1>Gestion des primates</h1>
-        <hr/>
-        <div className="row">
-          <div className="col-md-6 border-right">
-            {editing ? (
-              <Fragment>
-                <EditPrimateTable
-                  editing={editing}
-                  setEditing={setEditing}
-                  currentPrimate={currentPrimate}
-                  updatePrimate={updatePrimate}
-                />
-              </Fragment>
-            ) : (
-              <Fragment>
-                <NewPrimateTable NewPrimate={NewPrimate} />
-              </Fragment>
-            )}
-          </div>
-          <div className="col-md-6">
-            <ListePrimateTable primates={primates} editRow={editRow} deletePrimate={deletePrimate} />
+        <Navigation />
+        <div className="container text-center my-3 fixed-top-fix">
+          <h1 className="some-title underline-title">Gestion des primates</h1>
+          <div className="row">
+            <div className="col-md-6 border-right">
+              {editing ? (
+                <Fragment>
+                  <EditPrimateTable
+                    editing={editing}
+                    setEditing={setEditing}
+                    currentPrimate={currentPrimate}
+                    updatePrimate={updatePrimate}
+                  />
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <NewPrimateTable NewPrimate={NewPrimate} />
+                </Fragment>
+              )}
+            </div>
+            <div className="col-md-6">
+              <ListePrimateTable primates={primates} editRow={editRow} deletePrimate={deletePrimate} />
+            </div>
           </div>
         </div>
-      </div>
       </div>
     )
 }

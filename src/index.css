@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 html, body {
   overflow: auto;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -14,13 +16,53 @@ code {
     monospace;
 }
 
-.nav-link, .navbar-brand{
-  color: #FFFFFF !important;
+nav {
+  border-bottom:1px solid #333;
+  font: 12px 'opensans-bold', sans-serif;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin: 0 auto;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
-.carousel{
-  margin-top: 30px;
-  margin-bottom: 30px;
+a.navbar-brand {
+  color:#333 !important;
+  text-transform: uppercase;
+  font-weight:bold;
+}
+
+a.nav-link{
+  margin-left:15px;
+  margin-right:15px;
+  font-weight:bold;
+  text-transform: uppercase;
+  color: #333 !important;
+}
+
+a.nav-link:hover{
+  transition:all 0.5s ease;
+  color: #333 !important;
+  border-bottom:2px solid #333;
+}
+
+.carousel, .description{
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+
+
+.bg-carousel {
+  background-color:white;
+}
+
+.bg-description {
+  padding-top:30px;
+  background-color:white;
 }
 
 .d-block{
@@ -28,23 +70,104 @@ code {
   object-fit: cover;
 }
 
-.row-description{
-  margin-top: 150px;
+.some-title {
+  text-align:center;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font: 30px 'opensans-bold', sans-serif;
+  color:#333 !important;
+  padding-top:50px;
+  padding-bottom: 10px;
+}
+
+.underline-title {
+  border-bottom:2px solid #333;
 }
 
 .img-description{
     width: 100%;
     object-fit: cover;
-    margin-top: 65px;
 }
 .text-description{
   text-align: justify;
 }
 
-.title-description{
-  text-align: center;
+.banner {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://w.wallhaven.cc/full/13/wallhaven-133mx1.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 433px 0;
 }
 
-.footer{
-  min-height: 200px;
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.footer {
+  font: 16px 'opensans-bold', sans-serif;
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+
+.footer-copyright strong {
+  color:#333 !important;
+}
+
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.scrolldown a {
+   opacity: 1;
+   position: absolute;
+   bottom: 30px;
+   left: 50%;
+   margin-left: -29px;
+   color: #fff;
+   display: block;
+   height: 42px;
+   width: 42px;
+   font-size: 42px;
+   line-height: 42px;
+   color: #fff !important;
+   border-radius: 100%;
+
+   -webkit-transition: all .3s ease-in-out;
+   -moz-transition: all .3s ease-in-out;
+   -o-transition: all .3s ease-in-out;
+   transition: all .3s ease-in-out;
+}
+.scrolldown a:hover { color: #77dd77!important; }
+
+.fixed-top-fix {
+  padding-top:100px;
 }
