@@ -4,45 +4,25 @@ import {Carousel} from 'react-bootstrap';
 class CarouselModule extends React.Component {
   render() {
     return (
-      <div className="bg-carousel">
         <Carousel>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="./primate1.jpg"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>PRIMATE 1</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="./primate2.jpg"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h3>PRIMATE 2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="./primate3.jpg"
-              alt="Third slide"
-            />
-
-            <Carousel.Caption>
-              <h3>PRIMATE 3</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
+          {JSON.parse(localStorage.getItem("primates")).length > 0 ? (
+            JSON.parse(localStorage.getItem("primates")).map(primate => (
+              <Carousel.Item key={primate.id}>
+                <img className="d-block w-100" src="./primate1.jpg" alt="First slide"/>
+                <Carousel.Caption>
+                  <h3 className="some-title2">{primate.name}</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))
+          ) : (
+            <Carousel.Item>
+              <img className="d-block w-100" src="./primate1.jpg" alt="First slide"/>
+              <Carousel.Caption>
+                <h3 className="some-title2">Primate random</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+          )}
         </Carousel>
-      </div>
     )
   }
 }

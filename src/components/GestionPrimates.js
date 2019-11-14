@@ -1,27 +1,19 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import Navigation from './Navigation';
+import Footer from './Footer';
 
 const GestionPrimates = () => {
 
-  const primatesData = [
-    { id: 1, name: 'Tania'},
-    { id: 2, name: 'Craig'},
-    { id: 3, name: 'Ben'},
-  ]
-
+  const primatesData = JSON.parse(localStorage.getItem("primates"))
   const [primates, setPrimates] = useState(primatesData)
-
   const [editing, setEditing] = useState(false)
   const initialFormState = { id: null, name: ''}
   const [currentPrimate, setCurrentPrimate] = useState(initialFormState)
-
   const NewPrimateTable = props => {
       const initialFormState = { id: null, name: '' }
       const [ primate, setPrimate ] = useState(initialFormState)
-
       const handleInputChange = event => {
         const { name, value } = event.target
-
         setPrimate({ ...primate, [name]: value })
       }
 
@@ -30,7 +22,6 @@ const GestionPrimates = () => {
           onSubmit={event => {
             event.preventDefault()
             if (!primate.name) return
-
             props.NewPrimate(primate)
             setPrimate(initialFormState)
           }} className="form-inline"
@@ -45,10 +36,8 @@ const GestionPrimates = () => {
 
     const EditPrimateTable = props => {
       const [primate, setPrimate] = useState(props.currentPrimate)
-
       const handleInputChange = event => {
         const { name, value } = event.target
-
         setPrimate({ ...primate, [name]: value })
       }
       useEffect(() => {
@@ -112,13 +101,11 @@ const GestionPrimates = () => {
 
   const editRow = primate => {
     setEditing(true)
-
     setCurrentPrimate({ id: primate.id, name: primate.name})
   }
 
   const updatePrimate = (id, updatedPrimate) => {
     setEditing(false)
-
     setPrimates(primates.map(primate => (primate.id === id ? updatedPrimate : primate)))
   }
 
@@ -134,30 +121,36 @@ const GestionPrimates = () => {
     return (
       <div>
         <Navigation />
-        <div className="container text-center my-3 fixed-top-fix">
-          <h1 className="some-title underline-title">Gestion des primates</h1>
-          <div className="row">
-            <div className="col-md-6 border-right">
-              {editing ? (
-                <Fragment>
-                  <EditPrimateTable
-                    editing={editing}
-                    setEditing={setEditing}
-                    currentPrimate={currentPrimate}
-                    updatePrimate={updatePrimate}
-                  />
-                </Fragment>
-              ) : (
-                <Fragment>
-                  <NewPrimateTable NewPrimate={NewPrimate} />
-                </Fragment>
-              )}
+
+        <div className="banner2">
+            <div id="gestion-container" className="container text-center">
+              <h1 className="some-title underline-title">Gestion des primates</h1>
+              <div className="row mt-3">
+                <div className="col-md-6 border-right">
+                  {editing ? (
+                    <Fragment>
+                      <EditPrimateTable
+                        editing={editing}
+                        setEditing={setEditing}
+                        currentPrimate={currentPrimate}
+                        updatePrimate={updatePrimate}
+                      />
+                    </Fragment>
+                  ) : (
+                    <Fragment>
+                      <NewPrimateTable NewPrimate={NewPrimate} />
+                    </Fragment>
+                  )}
+                </div>
+                <div className="col-md-6">
+                  <ListePrimateTable primates={primates} editRow={editRow} deletePrimate={deletePrimate} />
+                </div>
+              </div>
             </div>
-            <div className="col-md-6">
-              <ListePrimateTable primates={primates} editRow={editRow} deletePrimate={deletePrimate} />
-            </div>
-          </div>
         </div>
+
+
+        <Footer />
       </div>
     )
 }

@@ -75,7 +75,6 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */ }
@@ -114,7 +113,6 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */ }
@@ -371,7 +369,7 @@ h4,
 h5 {
   margin: 1.5rem 0;
   font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'opensans-bold', sans-serif;
   line-height: 1.2;
   color: #404040; }
   h1:not(:first-child),
@@ -446,11 +444,11 @@ pre {
   padding: 1rem;
   tab-size: 2;
   color: #404040;
-  font-family: Menlo, monospace;
+  font-family: 'opensans-bold';
   font-size: 14px;
   margin: 0 0 1.5rem 0; }
   pre code {
-    font-family: Menlo, monospace;
+    font-family: 'opensans-bold';
     line-height: 1.2; }
 
 kbd {
@@ -460,7 +458,7 @@ kbd {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   color: #333;
   display: inline-block;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'opensans-bold';
   font-size: 13px;
   line-height: 1.4;
   margin: 0 .1em;
@@ -470,7 +468,7 @@ kbd {
 :not(pre) > code {
   color: #404040;
   background: transparent;
-  font-family: Menlo, monospace;
+  font-family: 'opensans-bold';
   font-size: 14px;
   padding: 0 0.2rem;
   border: 1px solid #dedede;
@@ -646,7 +644,7 @@ dd {
   background: #0366EE;
   color: #ffffff;
   font-weight: 600;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'opensans-bold', sans-serif;
   font-size: 1rem;
   text-transform: none;
   padding: .75rem 1.25rem;

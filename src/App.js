@@ -7,10 +7,20 @@ import Banner from './components/Banner';
 import Description from './components/Description';
 import CarouselModule from './components/Carousel';
 import Cards from './components/Cards';
-import FooterPage from './components/Footer'
+import Footer from './components/Footer'
 
 
 function App() {
+
+  const primatesData = [
+    { id: 1, name: 'Gorille de l\'Est'},
+    { id: 2, name: 'Bonobo'},
+    { id: 3, name: 'Chimpanzé'}
+  ]
+
+  if (localStorage.getItem("primates") === null) {
+    localStorage.setItem('primates', JSON.stringify(primatesData));
+  }
 
   return (
     <div className="App">
@@ -19,7 +29,7 @@ function App() {
       <Description />
       <CarouselModule />
       <Cards />
-      <FooterPage color="cyan"/>
+      <Footer />
     </div>
   );
 }
