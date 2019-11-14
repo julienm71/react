@@ -84,6 +84,23 @@ a.nav-link:hover{
   padding-bottom: 10px;
 }
 
+.some-title3 {
+  text-align:left;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font: 25px 'opensans-bold', sans-serif;
+  color:#fff !important;
+}
+
+.some-p {
+  text-align:left;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font: 15px 'opensans-bold', sans-serif;
+  color:#fff !important;
+  opacity: .7;
+}
+
 .underline-title {
   border-bottom:2px solid #333;
 }
@@ -114,7 +131,7 @@ a.nav-link:hover{
   padding: 250px 0;
 }
 
-.banner h1 {
+/*.banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -127,7 +144,7 @@ a.nav-link:hover{
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
+}*/
 
 .footer {
   font: 16px 'opensans-bold', sans-serif;
