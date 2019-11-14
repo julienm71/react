@@ -5,7 +5,7 @@ class Description extends React.Component {
     return (
       <div className="bg-description" id="more">
         <div className="container">
-            <h1 class="some-title underline-title">A propos de PrimateLand</h1>
+          <h1 class="some-title underline-title">A propos de PrimateLand</h1>
           <div className="description">
             <div className="row">
               <div className="col-6">

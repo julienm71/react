@@ -49,12 +49,16 @@ a.nav-link:hover{
   border-bottom:2px solid #333;
 }
 
-.carousel, .description{
+.carousel {
+  width:100%;
+  padding:0;
+
+}
+
+.description{
   padding-top:30px;
   padding-bottom:30px;
 }
-
-
 
 .bg-carousel {
   background-color:white;
@@ -76,7 +80,7 @@ a.nav-link:hover{
   text-transform: uppercase;
   font: 30px 'opensans-bold', sans-serif;
   color:#333 !important;
-  padding-top:50px;
+  padding-top:25px;
   padding-bottom: 10px;
 }
 
@@ -146,6 +150,14 @@ a.nav-link:hover{
   opacity: 1;
 }
 
+.flex-cards {
+  padding-top:30px;
+  padding-bottom:30px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .scrolldown a {
    opacity: 1;
    position: absolute;
@@ -169,5 +181,5 @@ a.nav-link:hover{
 .scrolldown a:hover { color: #77dd77!important; }
 
 .fixed-top-fix {
-  padding-top:100px;
+  padding-top:100px!important;
 }
