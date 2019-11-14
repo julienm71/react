@@ -5,7 +5,7 @@ class Cards extends React.Component {
   render() {
     return (
       <div className="container" id="primates">
-        <h1 className="some-title underline-title">Tout nos primates</h1>
+        <h1 className="some-title underline-title">Tous nos primates</h1>
         <div className="flex-cards">
           {JSON.parse(localStorage.getItem("primates")).length > 0 ? (
             JSON.parse(localStorage.getItem("primates")).map(primate => (
